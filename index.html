@@ -141,7 +141,7 @@
         aria-labelledby="p1modalLabel"
         aria-hidden="true"
       >
-        <div class="modal-dialog">
+        <div class="modal-dialog modal-fullscreen">
           <div class="modal-content">
             <div class="modal-header">
               <h1 class="modal-title fs-5" id="p1modalLabel">Modal title</h1>
@@ -152,7 +152,17 @@
                 aria-label="Close"
               ></button>
             </div>
-            <div class="modal-body">...</div>
+            <div class="modal-body">
+              <div class="container">
+                <div class="row">
+                  <div class="col-md-3"></div>
+                  <h2>P1 details</h2>
+                </div>
+                <div class="col-md-9"></div>
+                <h2>cat</h2>
+                <img src="images/bluecat.webp" />
+              </div>
+            </div>
             <div class="modal-footer">
               <button
                 type="button"
@@ -160,9 +170,6 @@
                 data-bs-dismiss="modal"
               >
                 Close
-              </button>
-              <button type="button" class="btn btn-primary">
-                Save changes
               </button>
             </div>
           </div>

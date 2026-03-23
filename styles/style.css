@@ -64,12 +64,16 @@ h5 {
   border-radius: 0;
 }
 
+.modal-body img {
+  width: 100;
+}
+
 .btn {
   background-color: var(--red);
   border-color: rgb(61, 61, 61);
 }
 
-/* .btn :hover {
+/* .btn  {
   background-color: rgba(73, 14, 14, 0.476);
 } */
 
