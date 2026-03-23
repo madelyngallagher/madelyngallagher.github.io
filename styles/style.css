@@ -1,33 +1,79 @@
+@import url("https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap");
+
+:root {
+  --black: rgb(37, 37, 37);
+  --white: rgb(241, 239, 234);
+  --red: rgb(55, 4, 4);
+}
+
 body {
-    padding-top: 6rem;
+  background-color: var(--white);
 }
 
-h1 {
-    font-size: 2.5rem;
+/* Navigation */
+.navbar {
+  background-color: var(--black) !important;
 }
 
-div.row {
-    background: var(--bs-primary-bg-subtle);
-    margin-bottom: 1em;
+/* Hero Section */
+.hero-section {
+  background: var(--black);
+  background-position: 50% 50%;
+
+  background-size: cover;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--white);
 }
 
-h3 {
-    margin-top: 25vh;
+.bg-light {
+  background-color: red;
 }
 
-div.row div {
-    padding: 5px;
-    border: 1px solid var(--bs-tertiary-color);
+.hero-section h1 {
+  font-weight: 700;
+  font-family: "DM Sans";
+  letter-spacing: -0.04em;
+  color: var(--white);
 }
 
-p {
-    font-size: 1.25rem;
+h2,
+h3,
+h4,
+h5 {
+  font-family: Helvetica, sans-serif;
+  letter-spacing: -0.04em;
+  font-weight: 800;
+  color: var(--black);
 }
 
-ul {
-    font-size: 1.25rem;
+.hero-section .lead {
+  font-size: 1.5rem;
 }
 
-ul li {
-    margin-bottom: 1rem;
+.work-card {
+  background-color: var(--black);
+  color: var(--white);
+}
+
+.work-card img {
+  height: 300px;
+  object-fit: cover;
+  border-radius: 0;
+}
+
+.btn {
+  background-color: var(--red);
+  border-color: rgb(61, 61, 61);
+}
+
+/* .btn :hover {
+  background-color: rgba(73, 14, 14, 0.476);
+} */
+
+h2 {
+  font-weight: 700;
+  color: var(--black);
 }

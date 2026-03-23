@@ -8,7 +8,7 @@
 
     <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>Madelyn Gallagher Portfolio</title>
+    <title>Madelyn Gallagher</title>
 
     <link
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
@@ -21,151 +21,110 @@
   </head>
 
   <body>
-    <div class="container">
-      <h1>Madelyn's portfolio is under construction here</h1>
-
-      <h2>
-        For now, let's practice with
-        <a href="https://getbootstrap.com/" target="_blank">Bootstrap.</a>
-      </h2>
-    </div>
-    <div class="container">
-      <h3>Here's an example of four equal columns.</h3>
-
-      <div class="row">
-        <div class="col">
-          <p>Column 1</p>
-        </div>
-        <div class="col">
-          <p>Column 2</p>
-        </div>
-        <div class="col">
-          <p>Column 3</p>
-        </div>
-        <div class="col">
-          <p>Column 4</p>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+      <div class="container">
+        <a class="navbar-brand" href="#">madelyn</a>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav ms-auto">
+            <li class="nav-item">
+              <a class="navbar-brand" href="#hero">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="navbar-brand" href="#work">Work</a>
+            </li>
+            <li class="nav-item">
+              <a class="navbar-brand" href="#contact">Contact</a>
+            </li>
+          </ul>
         </div>
       </div>
-    </div>
+    </nav>
 
-    <div class="container">
-      <h3>Here's an example of three columns with set widths.</h3>
-
-      <div class="row">
-        <div class="col-6">
-          <p>This content spans 6 columns.</p>
-        </div>
-        <div class="col-3">
-          <p>This spans 3</p>
-        </div>
-        <div class="col-3">
-          <p>This spans 3</p>
+    <!-- Hero Section -->
+    <section id="hero" class="hero-section">
+      <div
+        class="container h-100 d-flex align-items-center justify-content-center"
+      >
+        <div class="text-center text-white">
+          <h1 class="display-1 fw-bold mb-4">Madelyn Gallagher</h1>
+          <p class="lead mb-4">Crafting beautiful digital experiences</p>
         </div>
       </div>
-    </div>
+    </section>
 
-    <div class="container">
-      <h3>
-        Here's an example of three columns with set widths and a breakpoint for
-        small screens.
-      </h3>
+    <!-- Work Section -->
+    <section id="work" class="py-5 sans-serif">
+      <div class="container">
+        <h2 class="text-center mb-5 display-5">My Work</h2>
 
-      <div class="row">
-        <div class="col-sm-6">
-          <p>This content spans 6 columns.</p>
-        </div>
-        <div class="col-sm-3">
-          <p>This spans 3</p>
-        </div>
-        <div class="col-sm-3">
-          <p>This spans 3</p>
+        <div class="row g-4">
+          <!-- Work 1 -->
+          <div class="col-md-6">
+            <div class="card h-100 work-card">
+              <img src="https://placehold.co/500x300/" />
+              <div class="card-body">
+                <h5 class="card-title">Project One</h5>
+                <p class="card-text">
+                  A modern web application built with responsive design
+                  principles. Features interactive components and smooth
+                  animations.
+                </p>
+                <a href="#" class="btn btn-sm btn-primary">View Project</a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Work 2 -->
+          <div class="col-md-6">
+            <div class="card h-100 work-card">
+              <img src="https://placehold.co/500x300/" />
+              <div class="card-body">
+                <h5 class="card-title">Project Two</h5>
+                <p class="card-text">
+                  A modern web application built with responsive design
+                  principles. Features interactive components and smooth
+                  animations.
+                </p>
+                <a href="#" class="btn btn-sm btn-primary">View Project</a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Work 3 -->
+          <div class="col-md-6">
+            <div class="card h-100 work-card">
+              <img src="https://placehold.co/500x300/" />
+              <div class="card-body">
+                <h5 class="card-title">Project Three</h5>
+                <p class="card-text">
+                  A modern web application built with responsive design
+                  principles. Features interactive components and smooth
+                  animations.
+                </p>
+                <a href="#" class="btn btn-sm btn-primary">View Project</a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Work 4 -->
+          <div class="col-md-6">
+            <div class="card h-100 work-card">
+              <img src="https://placehold.co/500x300/" />
+              <div class="card-body">
+                <h5 class="card-title">Project Four</h5>
+                <p class="card-text">
+                  A modern web application built with responsive design
+                  principles. Features interactive components and smooth
+                  animations.
+                </p>
+                <a href="#" class="btn btn-sm btn-primary">View Project</a>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
-    </div>
-
-    <div class="container">
-      <h3>
-        Here's an example of three columns, one with a set width and a
-        breakpoint for small screens, and two responsive.
-      </h3>
-
-      <div class="row">
-        <div class="col-sm-6">
-          <p>
-            This content spans 6 columns and will break to full width on small
-            screens.
-          </p>
-        </div>
-        <div class="col">
-          <p>
-            This column has no set width or breakpoint, so it will stay
-            responsive.
-          </p>
-        </div>
-        <div class="col">
-          <p>
-            This column has no set width or breakpoint, so it will stay
-            responsive.
-          </p>
-        </div>
-      </div>
-    </div>
-
-    <div class="container">
-      <h3>
-        Here's an example of three columns, all with a set width but only one
-        with a breakpoint.
-      </h3>
-
-      <div class="row">
-        <div class="col-sm-6">
-          <p>
-            This content spans 6 columns and will break to full width on small
-            screens.
-          </p>
-        </div>
-        <div class="col-3">
-          <p>This column will always span 3, and won't break.</p>
-        </div>
-        <div class="col-3">
-          <p>This column will always span 3, and won't break.</p>
-        </div>
-      </div>
-    </div>
-
-    <div class="container">
-      <h3>
-        Let's build out two rows here based on the example on the class slides.
-      </h3>
-      <div class="row">
-        <div class="col-sm-2">col-sm-2</div>
-        <div class="col-sm-10">col-sm-10</div>
-      </div>
-      <div class="row">
-        <div class="col">col</div>
-        <div class="col">col</div>
-      </div>
-    </div>
-
-    <div class="container">
-      <h3>
-        Now it's your turn! Let's try building out the other example in class on
-        your own.
-      </h3>
-      <div class="row">
-        <div class="col-sm-6">col</div>
-        <div class="col-sm-6">col</div>
-      </div>
-      <div class="row">
-        <div class="col">col</div>
-        <div class="col">col</div>
-        <div class="col">col</div>
-      </div>
-      <div class="row">
-        <div class="col-sm-6">col</div>
-        <div class="col-sm-6">col</div>
-      </div>
-    </div>
+    </section>
 
     <script
       src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
