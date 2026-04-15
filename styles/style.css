@@ -15,11 +15,6 @@ body {
   background-color: var(--black) !important;
 }
 
-/* .navbarText {
-  color: var(--white);
-  text-decoration: none;
-} */
-
 /* Hero Section */
 .hero-section {
   background: var(--black);
