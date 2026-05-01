@@ -1,13 +1,17 @@
 @import url("https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap");
 
+@font-face {
+  font-family: socialmedia;
+  src: url(fonts/SocialMediaCircled.ttf);
+}
+
 :root {
-  --black: rgb(37, 37, 37);
+  --black: #201d28;
   --white: rgb(241, 239, 234);
-  --red: rgb(55, 4, 4);
   --subtext: #9793a2;
 }
 
-.transition-fade {
+/* .transition-fade {
   opacity: 1;
   transition: 500ms;
 }
@@ -19,7 +23,7 @@ html.is-animating .transition-fade.is-animating.is-leaving {
   top: 0;
   left: 0;
   width: 100%;
-}
+} */
 
 body {
   background-color: var(--white);
@@ -35,7 +39,9 @@ body {
   z-index: -1;
 }
 
-.logo-container {
+/* HOME */
+
+.home .logo-container {
   position: absolute;
   top: 50%;
   left: 50%;
@@ -46,13 +52,13 @@ body {
   width: 15em;
 }
 
-.logo {
-  max-width: 250px;
-  width: 100%;
-  height: auto;
+.home .logo {
+  max-width: none;
+  width: auto;
+  height: 65px;
 }
 
-.subtext {
+.home .subtext {
   position: absolute;
   top: 56%;
   left: 50%;
@@ -60,91 +66,69 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 15em;
+  width: 20em;
   color: var(--subtext);
 }
 
-/* Navigation */
-.contact {
+/* HOME NAV */
+.home .contact {
   position: absolute;
   left: 56em;
   top: 10em;
   animation: rotateIcon 2.5s infinite linear;
 }
-.contact img {
+.home .contact img {
   width: 13em;
   rotate: 20deg;
   transition: transform 0.4s cubic-bezier(0.25, 1, 0.5, 1);
 }
-.contact img:hover {
+.home .contact img:hover {
   animation-play-state: paused;
   transform: scale(1.2);
 }
-.experience {
+.home .experience {
   position: absolute;
   left: 57.5em;
   top: 23em;
   animation: rotateIcon 1.5s infinite linear;
 }
-.experience img {
+.home .experience img {
   width: 13em;
   rotate: -20deg;
   transition: transform 0.4s cubic-bezier(0.25, 1, 0.5, 1);
 }
-.experience img:hover {
+.home .experience img:hover {
   animation-play-state: paused;
   transform: scale(1.2);
 }
-.design {
+.home .design {
   position: absolute;
   left: 25em;
   top: 23em;
   animation: rotateIcon2 1.5s infinite linear;
 }
-.design img {
+.home .design img {
   width: 13em;
   rotate: -20deg;
   transition: transform 0.4s cubic-bezier(0.25, 1, 0.5, 1);
 }
-.design img:hover {
+.home .design img:hover {
   animation-play-state: paused;
   transform: scale(1.2);
 }
-.about {
+.home .about {
   position: absolute;
   left: 25.5em;
   top: 10.5em;
   animation: rotateIcon2 2.5s infinite linear;
 }
-.about img {
+.home .about img {
   width: 12em;
   transition: transform 0.4s cubic-bezier(0.25, 1, 0.5, 1);
 }
-.about img:hover {
+.home .about img:hover {
   animation-play-state: paused;
   transform: scale(1.2);
-}
-.submenu {
-  display: none;
-  position: absolute;
-  top: 120%;
-  left: 50%;
-  transform: translateX(-50%);
-  list-style: none;
-  background: var(--white);
-  padding: 10px;
-  margin: 0;
-  border: 2px solid red;
-}
-.submenu li a {
-  display: block;
-  padding: 10px;
-  background: white;
-  text-decoration: none;
-}
-
-.design:hover .submenu {
-  display: block;
 }
 
 @keyframes rotateIcon {
@@ -170,12 +154,104 @@ body {
   }
 }
 
-.navbar {
-  background-color: var(--black) !important;
+/* MAIN NAV */
+
+.inner #wrapper {
+  width: 100%;
+  margin: auto;
+}
+.inner #header {
+  background: var(--black);
+  padding: 15px;
+}
+
+.inner {
+  display: flex;
+  align-items: center;
+  padding: 0;
+}
+/* #header,
+#footer {
+  margin: 0em;
+} */
+
+.logo {
+  width: auto;
+  display: block;
+  flex-shrink: 0;
+  object-fit: contain;
+  max-height: 65px;
+}
+
+.inner #nav {
+  display: flex;
+  gap: 1.5rem;
+  list-style: none;
+  margin-left: auto;
+  padding: 0;
+}
+
+.inner #nav li {
+  position: relative;
+}
+
+.inner #nav img {
+  width: 65px;
+  transition: transform 0.3s ease;
+}
+
+.inner #nav img:hover {
+  transform: scale(1.1);
+}
+
+.inner .submenu {
+  display: none;
+  position: absolute;
+  top: 105%;
+  left: 50%;
+  transform: translateX(-50%);
+  background: white;
+  padding: 12px;
+  border-radius: 14px;
+  min-width: 160px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+  opacity: 0;
+  pointer-events: none;
+  transition: all 0.3s ease;
+}
+.inner #nav li:hover .submenu {
+  opacity: 1;
+  transform: translateX(-50%) translateY(0);
+  pointer-events: auto;
+}
+.inner .submenu li {
+  list-style: none;
+}
+
+.inner .submenu a {
+  display: block;
+  padding: 10px 18px;
+
+  color: var(--black);
+  text-decoration: none;
+  font-family: "DM Sans", sans-serif;
+  font-size: 0.95rem;
+
+  transition: all 0.2s ease;
+}
+
+.inner .submenu a:hover {
+  background: rgba(0, 0, 0, 0.05);
+  padding-left: 22px; /* subtle slide */
+}
+
+.inner #nav li:hover .submenu,
+.inner .submenu:hover {
+  display: block;
 }
 
 /* Hero Section */
-.hero-section {
+/* .hero-section {
   background: var(--black);
   background-position: 50% 50%;
 
@@ -232,9 +308,9 @@ h5 {
   border-color: rgb(61, 61, 61);
 }
 
-/* .btn  {
+.btn  {
   background-color: rgba(73, 14, 14, 0.476);
-} */
+} 
 
 h2 {
   font-weight: 700;
@@ -254,4 +330,4 @@ h2 {
   width: 100%;
   height: 100%;
   object-fit: cover;
-}
+} */
