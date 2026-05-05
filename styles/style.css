@@ -11,22 +11,15 @@
   --subtext: #9793a2;
 }
 
-/* .transition-fade {
-  opacity: 1;
-  transition: 500ms;
+html,
+body {
+  height: 100%;
+  margin: 0;
 }
-html.is-animating .transition-fade {
-  opacity: 0;
-}
-html.is-animating .transition-fade.is-animating.is-leaving {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-} */
 
 body {
   background-color: var(--white);
+  padding-bottom: 90px;
 }
 
 .homebackground {
@@ -165,15 +158,15 @@ body {
   padding: 15px;
 }
 
-.inner {
+#header .inner {
   display: flex;
   align-items: center;
   padding: 0;
 }
-/* #header,
-#footer {
-  margin: 0em;
-} */
+
+#header {
+  margin-bottom: 20px;
+}
 
 .logo {
   width: auto;
@@ -250,84 +243,179 @@ body {
   display: block;
 }
 
-/* Hero Section */
-/* .hero-section {
-  background: var(--black);
-  background-position: 50% 50%;
+/* ABOUT */
 
-  background-size: cover;
-  height: 100vh;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: var(--white);
+.about-content {
+  position: absolute;
+  width: 40%;
+  top: 56%;
+  left: 70%;
+  transform: translate(-50%, -50%);
+  text-align: left;
+  font-size: 1.3rem;
+  line-height: 1.1;
 }
-
-.bg-light {
-  background-color: red;
-}
-
-.hero-section h1 {
+.about-header {
+  font-family: "aktiv-grotesk-extended", sans-serif;
+  font-style: normal;
   font-weight: 700;
-  font-family: "DM Sans";
-  letter-spacing: -0.04em;
-  color: var(--white);
-}
-
-h2,
-h3,
-h4,
-h5 {
-  font-family: Helvetica, sans-serif;
-  letter-spacing: -0.04em;
-  font-weight: 800;
+  font-size: 2.5rem;
+  margin-bottom: 0.5em;
+  letter-spacing: -0.05em;
   color: var(--black);
 }
-
-.hero-section .lead {
-  font-size: 1.5rem;
+.about-text {
+  color: var(--subtext);
+  font-family: Helvetica;
+  letter-spacing: -0.05em;
+  font-size: 1.3rem;
+  line-height: 1.1;
+  font-weight: 100;
 }
 
-.work-card {
-  background-color: var(--black);
-  color: var(--white);
+.headshot-shadow {
+  position: absolute;
+  top: 55%;
+  left: 25%;
+  transform: translate(-50%, -50%);
+  box-shadow: 10px 15px 0 rgb(15, 13, 42);
+  border-radius: 50%;
 }
 
-.work-card img {
-  height: 300px;
-  object-fit: cover;
-  border-radius: 0;
+.headshot-frame {
+  width: 450px;
+  height: 450px;
+  border-radius: 50%;
+  overflow: hidden;
 }
 
-.modal-body img {
-  width: 100;
-}
-
-.btn {
-  background-color: var(--red);
-  border-color: rgb(61, 61, 61);
-}
-
-.btn  {
-  background-color: rgba(73, 14, 14, 0.476);
-} 
-
-h2 {
-  font-weight: 700;
-  color: var(--black);
-}
-
-#catCarousel {
-  max-width: 700px;
-  margin: 0 auto;
-  padding-bottom: 1em;
-}
-
-.carousel-item {
-  height: 700px;
-}
-.carousel-item img {
+.headshot {
   width: 100%;
   height: 100%;
   object-fit: cover;
-} */
+  object-position: 0% 70%;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+}
+
+/* DESIGN */
+
+.design-header {
+  position: static;
+  margin: 15px;
+
+  width: fit-content;
+  font-family: "aktiv-grotesk-extended", sans-serif;
+  font-weight: 700;
+  font-size: 2em;
+  letter-spacing: -0.05em;
+  color: var(--white);
+  background-color: var(--black);
+  padding: 7px 12px;
+  border-radius: 10px;
+}
+
+.posters {
+  width: 100%;
+}
+
+.poster-img:hover {
+  cursor: pointer;
+}
+
+.work-scroll {
+  width: 100%;
+  margin-top: 20px;
+  overflow-x: auto;
+  overflow-y: hidden;
+}
+
+.work-track {
+  display: flex;
+}
+
+.work-track img {
+  height: auto;
+  width: 400px;
+  flex-shrink: 0;
+  padding-right: 5px;
+}
+
+/* LIGHTBOX */
+
+.lightbox {
+  display: none;
+  position: fixed;
+  z-index: 9999;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.9);
+  justify-content: center;
+  align-items: center;
+}
+
+.lightbox-content {
+  display: flex;
+  gap: 30px;
+  align-items: center;
+  max-width: 90%;
+}
+
+.lightbox-img {
+  max-width: 60vw;
+  max-height: 80vh;
+  object-fit: contain;
+}
+
+.lightbox-text {
+  color: var(--white);
+  max-width: 300px;
+  font-family: Helvetica, sans-serif;
+}
+
+.lightbox-text h2 {
+  margin-bottom: 10px;
+  font-size: 1.5rem;
+}
+
+.lightbox-text p {
+  font-size: 0.95rem;
+  color: var(--subtext);
+  line-height: 1.4;
+}
+
+.lightbox-close {
+  position: absolute;
+  top: 20px;
+  right: 30px;
+  font-size: 40px;
+  color: white;
+  cursor: pointer;
+}
+
+/* EXPERIENCE */
+
+/* CONTACT */
+
+/* FOOTER */
+
+.footer {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px 25px;
+  background: var(--black);
+  z-index: 1000;
+  padding-bottom: 0;
+}
+
+.footer-text {
+  font-family: Helvetica, sans-serif;
+  font-size: 0.7rem;
+  color: var(--subtext);
+}
