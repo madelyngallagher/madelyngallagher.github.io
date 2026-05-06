@@ -147,6 +147,36 @@ body {
   }
 }
 
+/* tooltip */
+.home #homenav li a::after {
+  content: attr(data-label);
+  position: absolute;
+
+  left: 50%;
+  bottom: 100%;
+  transform: translateX(-50%);
+
+  margin-bottom: 10px;
+
+  background: var(--black);
+  color: var(--white);
+  font-family: "aktiv-grotesk-extended";
+  font-weight: 700;
+  font-size: 0.75rem;
+  padding: 5px 10px;
+  border-radius: 6px;
+  white-space: nowrap;
+
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.2s ease;
+  z-index: 99999;
+}
+
+.home #homenav li a:hover::after {
+  opacity: 1;
+}
+
 /* MAIN NAV */
 
 .inner #wrapper {
@@ -302,7 +332,6 @@ body {
 .design-header {
   position: static;
   margin: 15px;
-
   width: fit-content;
   font-family: "aktiv-grotesk-extended", sans-serif;
   font-weight: 700;
@@ -312,6 +341,16 @@ body {
   background-color: var(--black);
   padding: 7px 12px;
   border-radius: 10px;
+}
+
+a.crest-news {
+  color: var(--white);
+  text-decoration: none;
+}
+
+a.crest-news:hover {
+  color: var(--subtext);
+  transition: color 0.3s ease-in-out;
 }
 
 .posters {
@@ -329,15 +368,64 @@ body {
   overflow-y: hidden;
 }
 
-.work-track {
+.work-track-p,
+.work-track-c,
+.work-track-i {
   display: flex;
 }
 
-.work-track img {
+.work-track-p img {
   height: auto;
-  width: 400px;
+  width: 385px;
   flex-shrink: 0;
   padding-right: 5px;
+}
+
+.work-track-c img {
+  height: auto;
+  width: 625px;
+  flex-shrink: 0;
+  padding-right: 5px;
+}
+
+.crest-years {
+  display: none;
+  margin-top: 8px;
+  background: var(--white);
+  padding: 10px 14px;
+  border-radius: 10px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+  width: fit-content;
+}
+
+.crest-years a {
+  display: block;
+  text-decoration: none;
+  color: var(--black);
+  font-family: "DM Sans", sans-serif;
+  font-size: 0.95rem;
+  padding: 6px 0;
+}
+
+.crest-header {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  cursor: pointer;
+}
+
+.dropdown-arrow {
+  font-size: 0.9rem;
+  transition: transform 0.2s ease;
+}
+
+/* active state */
+.crest-header.open .dropdown-arrow {
+  transform: rotate(180deg);
+}
+
+.crest-years.show {
+  display: block;
 }
 
 /* LIGHTBOX */
