@@ -7,7 +7,7 @@
 
 :root {
   --black: #201d28;
-  --white: rgb(241, 239, 234);
+  --white: #f1efea;
   --subtext: #9793a2;
 }
 
@@ -42,138 +42,95 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 15em;
+  width: 30vw;
+  min-width: 320px;
 }
 
 .home .logo {
-  max-width: none;
-  width: auto;
-  height: 65px;
+  width: 100%;
+  height: auto;
+  max-height: none;
 }
 
 .home .subtext {
   position: absolute;
-  top: 56%;
+  top: 61%;
   left: 50%;
   transform: translate(-50%, -50%);
+  width: 32vw;
+  min-width: 350px;
+
   display: flex;
-  align-items: center;
   justify-content: center;
-  width: 20em;
+
   color: var(--subtext);
+  font-size: 1.2rem;
+  text-align: center;
 }
 
 /* HOME NAV */
-.home .contact {
-  position: absolute;
-  left: 56em;
-  top: 10em;
-  animation: rotateIcon 2.5s infinite linear;
-}
-.home .contact img {
-  width: 13em;
-  rotate: 20deg;
-  transition: transform 0.4s cubic-bezier(0.25, 1, 0.5, 1);
-}
-.home .contact img:hover {
-  animation-play-state: paused;
-  transform: scale(1.2);
-}
+
+.home .about,
+.home .contact,
+.home .design,
 .home .experience {
   position: absolute;
-  left: 57.5em;
-  top: 23em;
-  animation: rotateIcon 1.5s infinite linear;
 }
-.home .experience img {
-  width: 13em;
-  rotate: -20deg;
-  transition: transform 0.4s cubic-bezier(0.25, 1, 0.5, 1);
-}
-.home .experience img:hover {
-  animation-play-state: paused;
-  transform: scale(1.2);
-}
-.home .design {
-  position: absolute;
-  left: 25em;
-  top: 23em;
-  animation: rotateIcon2 1.5s infinite linear;
-}
-.home .design img {
-  width: 13em;
-  rotate: -20deg;
-  transition: transform 0.4s cubic-bezier(0.25, 1, 0.5, 1);
-}
-.home .design img:hover {
-  animation-play-state: paused;
-  transform: scale(1.2);
-}
+
+/* top left */
 .home .about {
-  position: absolute;
-  left: 25.5em;
-  top: 10.5em;
+  left: 16vw;
+  top: 10vh;
   animation: rotateIcon2 2.5s infinite linear;
 }
-.home .about img {
-  width: 12em;
+
+/* top right */
+.home .contact {
+  right: 16vw;
+  top: 10vh;
+  animation: rotateIcon 2.5s infinite linear;
+}
+
+/* bottom left */
+.home .design {
+  left: 16vw;
+  bottom: 14vh;
+  animation: rotateIcon2 1.5s infinite linear;
+}
+
+/* bottom right */
+.home .experience {
+  right: 16vw;
+  bottom: 14vh;
+  animation: rotateIcon 1.5s infinite linear;
+}
+
+/* icon sizes */
+.home .about img,
+.home .contact img,
+.home .design img,
+.home .experience img {
+  width: 17vw;
+  min-width: 180px;
+  max-width: 320px;
+
   transition: transform 0.4s cubic-bezier(0.25, 1, 0.5, 1);
 }
-.home .about img:hover {
+
+/* rotations */
+
+.home .experience img,
+.home .design img {
+  rotate: -20deg;
+}
+
+/* hover */
+.home .about img:hover,
+.home .contact img:hover,
+.home .design img:hover,
+.home .experience img:hover {
   animation-play-state: paused;
-  transform: scale(1.2);
-}
-
-@keyframes rotateIcon {
-  0% {
-    transform: rotate(0deg) scale(1);
-  }
-  50% {
-    transform: rotate(3deg) scale(1);
-  }
-  100% {
-    transform: rotate(0deg) scale(1);
-  }
-}
-@keyframes rotateIcon2 {
-  0% {
-    transform: rotate(0deg) scale(1);
-  }
-  70% {
-    transform: rotate(-3deg) scale(1);
-  }
-  100% {
-    transform: rotate(0deg) scale(1);
-  }
-}
-
-/* tooltip */
-.home #homenav li a::after {
-  content: attr(data-label);
-  position: absolute;
-
-  left: 50%;
-  bottom: 100%;
-  transform: translateX(-50%);
-
-  margin-bottom: 10px;
-
-  background: var(--black);
-  color: var(--white);
-  font-family: "aktiv-grotesk-extended";
-  font-weight: 700;
-  font-size: 0.75rem;
-  padding: 5px 10px;
-  border-radius: 6px;
-  white-space: nowrap;
-  opacity: 0;
-  pointer-events: none;
-  transition: opacity 0.2s ease;
-  z-index: 99999;
-}
-
-.home #homenav li a:hover::after {
-  opacity: 1;
+  transform: scale(1.15);
 }
 
 /* MAIN NAV */
@@ -197,7 +154,7 @@ body {
   margin-bottom: 20px;
 }
 
-.logo {
+.inner .logo {
   width: auto;
   display: block;
   flex-shrink: 0;
@@ -539,4 +496,208 @@ a.crest-news:hover {
   font-family: Helvetica, sans-serif;
   font-size: 0.7rem;
   color: var(--subtext);
+}
+
+/* =========================
+   LARGE DESKTOPS
+========================= */
+
+@media (min-width: 1600px) {
+  .home .logo-container {
+    width: 34vw;
+  }
+
+  .home .subtext {
+    width: 36vw;
+    font-size: 1.4rem;
+  }
+
+  .home .about img,
+  .home .contact img,
+  .home .design img,
+  .home .experience img {
+    width: 18vw;
+    max-width: 360px;
+  }
+}
+
+/* =========================
+   LAPTOPS
+========================= */
+
+@media (max-width: 1200px) {
+  .home .logo-container {
+    width: 38vw;
+  }
+
+  .home .subtext {
+    width: 42vw;
+    font-size: 1rem;
+  }
+
+  .home .about {
+    left: 10vw;
+  }
+
+  .home .contact {
+    right: 10vw;
+  }
+
+  .home .design {
+    left: 10vw;
+  }
+
+  .home .experience {
+    right: 10vw;
+  }
+
+  .home .about img,
+  .home .contact img,
+  .home .design img,
+  .home .experience img {
+    width: 20vw;
+  }
+}
+
+/* =========================
+   TABLETS
+========================= */
+
+@media (max-width: 900px) {
+  .home .logo-container {
+    width: 55vw;
+    min-width: 250px;
+  }
+
+  .home .subtext {
+    width: 65vw;
+    min-width: unset;
+    top: 60%;
+    font-size: 0.95rem;
+  }
+
+  .home .about {
+    left: 5vw;
+    top: 8vh;
+  }
+
+  .home .contact {
+    right: 5vw;
+    top: 8vh;
+  }
+
+  .home .design {
+    left: 5vw;
+    bottom: 10vh;
+  }
+
+  .home .experience {
+    right: 5vw;
+    bottom: 10vh;
+  }
+
+  .home .about img,
+  .home .contact img,
+  .home .design img,
+  .home .experience img {
+    width: 24vw;
+    min-width: 120px;
+  }
+}
+
+/* MOBILE */
+
+@media (max-width: 600px) {
+  /* center layout */
+
+  .home {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+  }
+
+  /* logo */
+
+  .home .logo-container {
+    position: relative;
+    top: auto;
+    left: auto;
+    transform: none;
+
+    width: 75vw;
+    margin-top: 50px;
+    margin-bottom: 15px;
+  }
+
+  .home .logo {
+    width: 100%;
+    height: auto;
+  }
+
+  /* subtext */
+
+  .home .subtext {
+    position: relative;
+    top: auto;
+    left: auto;
+    transform: none;
+
+    width: 85vw;
+    text-align: center;
+    font-size: 0.95rem;
+    margin-bottom: 40px;
+  }
+
+  /* vertical icon layout */
+
+  .home #homenav {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 25px;
+
+    width: 100%;
+    padding: 0;
+    margin: 0;
+  }
+
+  .home #homenav li {
+    list-style: none;
+  }
+
+  /* reset absolute positioning */
+
+  .home .about,
+  .home .contact,
+  .home .design,
+  .home .experience {
+    position: relative;
+    left: auto;
+    right: auto;
+    top: auto;
+    bottom: auto;
+
+    animation: none;
+  }
+
+  /* icon sizing */
+
+  .home .about img,
+  .home .contact img,
+  .home .design img,
+  .home .experience img {
+    width: 42vw;
+    min-width: 140px;
+    max-width: 220px;
+
+    rotate: 0deg;
+  }
+  /* tooltip positioning */
+
+  .home #homenav li a::after {
+    bottom: auto;
+    top: 110%;
+    margin-top: 8px;
+  }
 }
