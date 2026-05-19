@@ -700,4 +700,74 @@ a.crest-news:hover {
     top: 110%;
     margin-top: 8px;
   }
+
+  /* ABOUT PAGE MOBILE */
+
+  @media (max-width: 900px) {
+    .about-content {
+      position: relative;
+      width: 85%;
+      top: auto;
+      left: auto;
+      transform: none;
+
+      margin: 40px auto 120px;
+      text-align: center;
+    }
+
+    .about-header {
+      font-size: 2rem;
+      line-height: 1;
+    }
+
+    .about-text {
+      font-size: 1.05rem;
+      line-height: 1.4;
+    }
+
+    .headshot-shadow {
+      position: relative;
+      top: auto;
+      left: auto;
+      transform: none;
+
+      width: fit-content;
+      margin: 40px auto 30px;
+
+      box-shadow: 8px 10px 0 rgb(15, 13, 42);
+    }
+
+    .headshot-frame {
+      width: 300px;
+      height: 300px;
+    }
+  }
+
+  /* PHONE */
+
+  @media (max-width: 600px) {
+    .about-content {
+      width: 88%;
+      margin-top: 20px;
+      margin-bottom: 120px;
+    }
+
+    .about-header {
+      font-size: 1.7rem;
+    }
+
+    .about-text {
+      font-size: 0.98rem;
+      line-height: 1.5;
+    }
+
+    .headshot-frame {
+      width: 220px;
+      height: 220px;
+    }
+
+    .headshot-shadow {
+      box-shadow: 6px 8px 0 rgb(15, 13, 42);
+    }
+  }
 }
