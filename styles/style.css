@@ -950,4 +950,30 @@ a.crest-news:hover {
     padding-right: 0;
     border-radius: 8px;
   }
+
+  /* FORCE SINGLE COLUMN LAYOUT ON MOBILE (DESIGN PAGE) */
+  .design,
+  .design-content,
+  .posters {
+    width: 100% !important;
+    max-width: 100% !important;
+    overflow-x: hidden;
+  }
+
+  /* PREVENT TEXT FROM SITTING BESIDE SCROLL ROWS */
+  .design-subtext,
+  .design-header {
+    width: 90vw;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+  }
+
+  /* MAKE SURE TEXT NEVER OVERFLOWS */
+  .design-subtext,
+  .about-text {
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    white-space: normal;
+  }
 }
