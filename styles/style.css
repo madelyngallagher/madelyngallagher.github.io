@@ -231,15 +231,17 @@ body {
 
 /* ABOUT */
 
+.about {
+  position: relative;
+}
+
 .about-content {
   position: absolute;
+  top: 50%;
+  left: 55%;
+  transform: translateY(-50%);
   width: 40%;
-  top: 56%;
-  left: 70%;
-  transform: translate(-50%, -50%);
   text-align: left;
-  font-size: 1.3rem;
-  line-height: 1.1;
 }
 .about-header {
   font-family: "aktiv-grotesk-extended", sans-serif;
@@ -261,9 +263,9 @@ body {
 
 .headshot-shadow {
   position: absolute;
-  top: 55%;
-  left: 25%;
-  transform: translate(-50%, -50%);
+  top: 50%;
+  left: 10vw; /* controls left placement cleanly */
+  transform: translateY(-50%);
   box-shadow: 10px 15px 0 rgb(15, 13, 42);
   border-radius: 50%;
 }
@@ -283,6 +285,10 @@ body {
   box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
 }
 
+#header .headshot-shadow {
+  pointer-events: none;
+}
+
 /* DESIGN */
 
 .design-header {
@@ -295,8 +301,17 @@ body {
   letter-spacing: -0.05em;
   color: var(--white);
   background-color: var(--black);
-  padding: 7px 12px;
+  padding: 6px 12px;
   border-radius: 10px;
+}
+
+.design-subtext {
+  margin: 0 15px 25px;
+  width: fit-content;
+  font-family: Helvetica, sans-serif;
+  font-size: 1.1rem;
+  letter-spacing: -0.05em;
+  color: var(--subtext);
 }
 
 a.crest-news {
@@ -498,16 +513,44 @@ a.crest-news:hover {
 }
 
 .contact-list a {
+  display: inline-block;
   color: var(--subtext);
   text-decoration: none;
   font-family: Helvetica;
   font-weight: 100;
   font-size: 2em;
   letter-spacing: -0.05em;
+  position: relative;
+  transition:
+    transform 0.3s ease,
+    color 0.3s ease;
 }
 .contact-list a:hover {
   text-decoration: underline;
+  transform: rotate(2deg) scale(1.05);
 }
+
+/* .note {
+  background: #fff8c7;
+
+  padding: 20px 24px;
+
+  width: fit-content;
+  max-width: 320px;
+
+  margin-left: 12%;
+
+  border-radius: 14px;
+
+  font-family: "DM Sans", sans-serif;
+  font-size: 1rem;
+  line-height: 1.5;
+  color: var(--black);
+
+  transform: rotate(-3deg);
+
+  box-shadow: 8px 8px 0 rgba(0, 0, 0, 0.08);
+} */
 
 /* FOOTER */
 
@@ -824,29 +867,23 @@ a.crest-news:hover {
 
   /* ABOUT MOBILE LAYOUT */
 
-  .about-content {
-    position: relative;
+  /* ABOUT PAGE CONTAINER RESET */
+  /* body.inner {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  } */
 
-    top: auto;
-    left: auto;
-    transform: none;
+  /* HEADER AREA SHOULD STOP BEING A LAYOUT WRAPPER */
+  /* #wrapper,
+  #header,
+  #header .inner {
+    position: static;
+    height: auto;
+  } */
 
-    width: 85vw;
-
-    margin: 30px auto 0;
-
-    text-align: center;
-  }
-
-  .about-header {
-    font-size: 2rem;
-    margin-bottom: 20px;
-  }
-
-  .about-text {
-    font-size: 1rem;
-    line-height: 1.4;
-  }
+  /* HEADSHOT FIRST (centered, above text) */
+  /* ABOUT MOBILE */
 
   .headshot-shadow {
     position: relative;
@@ -855,13 +892,62 @@ a.crest-news:hover {
     left: auto;
     transform: none;
 
-    margin: 40px auto 20px;
+    margin: 30px auto 20px;
 
-    width: fit-content;
+    box-shadow: none;
+
+    display: flex;
+    justify-content: center;
   }
 
   .headshot-frame {
-    width: 260px;
-    height: 260px;
+    width: 220px;
+    height: 220px;
+  }
+
+  .about-content {
+    position: relative;
+
+    top: auto;
+    left: auto;
+    transform: none;
+
+    width: 88vw;
+
+    margin: 0 auto 120px;
+
+    text-align: center;
+  }
+
+  .about-header {
+    font-size: 2rem;
+    margin-bottom: 15px;
+  }
+
+  .about-text {
+    font-size: 1rem;
+    line-height: 1.5;
+  }
+
+  /* POSTER MODULES - MOBILE FIX */
+  .work-scroll {
+    overflow-x: hidden;
+  }
+
+  .work-track-p,
+  .work-track-c,
+  .work-track-i {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+
+  .work-track-p img,
+  .work-track-c img,
+  .work-track-i img {
+    width: 100%;
+    height: auto;
+    padding-right: 0;
+    border-radius: 8px;
   }
 }
